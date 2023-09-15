@@ -28,11 +28,13 @@ class ViewController: UIViewController {
     @IBAction func startAction() {
         if timer?.isValid == true {
             timer?.invalidate()
+            toggleStartButton(isStart: true)
         } else {
             timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [weak self] timer in self?.currentTime += 0.01
                 print(self?.currentTime ?? 0)
                 self?.displayCurrentTime(seconds: self?.currentTime ?? 0)
             }
+            toggleStartButton(isStart: false)
         }
     }
     
@@ -44,6 +46,20 @@ class ViewController: UIViewController {
         let milliseconds = String(format: "%.2f", seconds).components(separatedBy: ".")[1]
         timeLabel.text = String(format: "%02d:%02d.%@", sec / 60, sec % 60, milliseconds)
 //        timeLabel.text = "\(Int(seconds) / 60):\(Int(seconds) % 60)"
+    }
+    
+    
+   
+    func toggleStartButton(isStart:Bool) {
+        if isStart {
+            startButton.setTitle("시작", for: .normal)
+            startButton.setTitleColor(.green, for: .normal)
+            startButton.backgroundColor = UIColor(red: 0, green: 0.9, blue: 0, alpha: 0.15)
+        }else{
+            startButton.setTitle("중단", for: .normal)
+            startButton.setTitleColor(.red, for: .normal)
+            startButton.backgroundColor = UIColor(red: 0.9, green: 0, blue: 0, alpha: 0.15)
+        }
     }
 }
 
