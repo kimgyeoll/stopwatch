@@ -39,6 +39,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetAction() {
+        toggleResetButton(isStart: false)
+        toggleStartButton(isStart: true)
+        
+        timer?.invalidate()
+        timeLabel.text = "00:00:00"
+        currentTime = 0
         }
     
     func displayCurrentTime(seconds:Float) {
@@ -51,6 +57,8 @@ class ViewController: UIViewController {
     
    
     func toggleStartButton(isStart:Bool) {
+        toggleResetButton(isStart: true)
+        
         if isStart {
             startButton.setTitle("시작", for: .normal)
             startButton.setTitleColor(.green, for: .normal)
@@ -59,6 +67,15 @@ class ViewController: UIViewController {
             startButton.setTitle("중단", for: .normal)
             startButton.setTitleColor(.red, for: .normal)
             startButton.backgroundColor = UIColor(red: 0.9, green: 0, blue: 0, alpha: 0.15)
+        }
+    }
+    
+    func toggleResetButton(isStart:Bool) {
+        resetButton.setTitle("재설정", for: .normal)
+        if isStart {
+            resetButton.setTitleColor(.white, for: .normal)
+        }else{
+            resetButton.setTitleColor(.darkGray, for: .normal)
         }
     }
 }
