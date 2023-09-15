@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timeLabel.font = UIFont.monospacedSystemFont(ofSize: 100, weight: .thin)
+        //offsize150 over시, millisecond 출력안됨
     }
     
     
