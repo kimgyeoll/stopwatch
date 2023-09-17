@@ -8,15 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    // MARK: - IBOutlet Properties
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
+    // Mark: Properties
     var timer: Timer?
     var currentTime: Float = 0
     
+    // Mark: Viewcontroller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +31,7 @@ class ViewController: UIViewController {
         
     }
     
-    
+    // Mark: IBactionMethod
     @IBAction func startAction() {
         if timer?.isValid == true {
             timer?.invalidate()
@@ -52,6 +54,9 @@ class ViewController: UIViewController {
         currentTime = 0
         }
     
+    
+    // Mark: Privatemethod
+    ///스톱워치 시간표시
     func displayCurrentTime(seconds: Float) {
         let sec = Int(seconds)
         let milliseconds = String(format: "%.2f", seconds).components(separatedBy: ".")[1]
@@ -75,11 +80,11 @@ class ViewController: UIViewController {
         if isStart {
             startButton.setTitle("시작", for: .normal)
             startButton.setTitleColor(.green, for: .normal)
-            startButton.backgroundColor = UIColor(red: 0, green: 0.9, blue: 0, alpha: 0.15)
+            startButton.backgroundColor = .startBgColor
         }else{
             startButton.setTitle("중단", for: .normal)
             startButton.setTitleColor(.red, for: .normal)
-            startButton.backgroundColor = UIColor(red: 0.9, green: 0, blue: 0, alpha: 0.15)
+            startButton.backgroundColor = .stopBgColor
         }
     }
     
