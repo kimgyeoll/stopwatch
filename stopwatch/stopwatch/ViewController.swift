@@ -47,12 +47,20 @@ class ViewController: UIViewController {
         currentTime = 0
         }
     
-    func displayCurrentTime(seconds:Float) {
+    func displayCurrentTime(seconds: Float) {
         let sec = Int(seconds)
         let milliseconds = String(format: "%.2f", seconds).components(separatedBy: ".")[1]
         timeLabel.text = String(format: "%02d:%02d.%@", sec / 60, sec % 60, milliseconds)
-//        timeLabel.text = "\(Int(seconds) / 60):\(Int(seconds) % 60)"
+        
+        let textLength = timeLabel.text?.count ?? 0
+        let attributedString = NSMutableAttributedString(string: timeLabel.text ?? "")
+        let font = UIFont.monospacedDigitSystemFont(ofSize: 110, weight: .thin)
+        attributedString.addAttributes([.font: font], range: NSRange(location: textLength - 2, length: 2))
+        attributedString.addAttributes([.foregroundColor: UIColor.green], range: NSRange(location: textLength - 2, length: 2))
+        
+        timeLabel.attributedText = attributedString
     }
+
     
     
    
