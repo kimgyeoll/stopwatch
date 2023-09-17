@@ -55,18 +55,23 @@ class ViewController: UIViewController {
         }
     
     
-    // Mark: Privatemethod
-    ///스톱워치 시간표시
+    // Mark: Private method
+    /// 스톱워치 시간 표시
     func displayCurrentTime(seconds: Float) {
         let sec = Int(seconds)
         let milliseconds = String(format: "%.2f", seconds).components(separatedBy: ".")[1]
         timeLabel.text = String(format: "%02d:%02d.%@", sec / 60, sec % 60, milliseconds)
-        
+
         let textLength = timeLabel.text?.count ?? 0
         let attributedString = NSMutableAttributedString(string: timeLabel.text ?? "")
         let font = UIFont.monospacedDigitSystemFont(ofSize: 110, weight: .thin)
-//        attributedString.addAttributes([.font: font], range: NSRange(location: textLength - 2 , length: 2))
-//        attributedString.addAttributes([.foregroundColor: UIColor.gray], range: NSRange(location: 0 , length: 7))
+        
+        // 첫 번째 범위: 마지막 2자리를 회색으로 설정
+        attributedString.addAttributes([.font: font, .foregroundColor: UIColor.gray], range: NSRange(location: textLength - 2, length: 2))
+        
+        // 두 번째 범위: 3번째와 4번째 문자를 굵은 오렌지로 설정
+        let font1 = UIFont.monospacedDigitSystemFont(ofSize: 120, weight: .bold)
+        attributedString.addAttributes([.font: font1, .foregroundColor: UIColor.orange], range: NSRange(location: 2, length: 2))
 
         timeLabel.attributedText = attributedString
     }
