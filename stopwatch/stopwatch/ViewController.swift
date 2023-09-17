@@ -23,8 +23,10 @@ class ViewController: UIViewController {
         timeLabel.font = UIFont.monospacedSystemFont(ofSize: 100, weight: .thin)
         //offsize150 over시, millisecond 출력안됨
         
-        startButton.layer.cornerRadius = 40
-        resetButton.layer.cornerRadius = 40
+//        startButton.layer.cornerRadius = 40
+//        resetButton.layer.cornerRadius = 40
+//        resetButton.layer.cornerRadius = startButton.frame.width / 2
+        
     }
     
     
