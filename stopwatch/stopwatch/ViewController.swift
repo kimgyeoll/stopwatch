@@ -22,6 +22,9 @@ class ViewController: UIViewController {
         
         timeLabel.font = UIFont.monospacedSystemFont(ofSize: 100, weight: .thin)
         //offsize150 over시, millisecond 출력안됨
+        
+        startButton.layer.cornerRadius = 40
+        resetButton.layer.cornerRadius = 40
     }
     
     
@@ -52,13 +55,13 @@ class ViewController: UIViewController {
         let milliseconds = String(format: "%.2f", seconds).components(separatedBy: ".")[1]
         timeLabel.text = String(format: "%02d:%02d.%@", sec / 60, sec % 60, milliseconds)
         
-        let textLength = timeLabel.text?.count ?? 0
-        let attributedString = NSMutableAttributedString(string: timeLabel.text ?? "")
-        let font = UIFont.monospacedDigitSystemFont(ofSize: 110, weight: .thin)
+//        let textLength = timeLabel.text?.count ?? 0
+//        let attributedString = NSMutableAttributedString(string: timeLabel.text ?? "")
+//        let font = UIFont.monospacedDigitSystemFont(ofSize: 110, weight: .thin)
 //        attributedString.addAttributes([.font: font], range: NSRange(location: textLength - 2 , length: 2))
 //        attributedString.addAttributes([.foregroundColor: UIColor.gray], range: NSRange(location: 0 , length: 7))
-        
-        timeLabel.attributedText = attributedString
+//
+//        timeLabel.attributedText = attributedString
     }
 
     
