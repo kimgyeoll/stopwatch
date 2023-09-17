@@ -55,8 +55,8 @@ class ViewController: UIViewController {
         let textLength = timeLabel.text?.count ?? 0
         let attributedString = NSMutableAttributedString(string: timeLabel.text ?? "")
         let font = UIFont.monospacedDigitSystemFont(ofSize: 110, weight: .thin)
-        attributedString.addAttributes([.font: font], range: NSRange(location: textLength - 2, length: 2))
-        attributedString.addAttributes([.foregroundColor: UIColor.green], range: NSRange(location: textLength - 2, length: 2))
+//        attributedString.addAttributes([.font: font], range: NSRange(location: textLength - 2 , length: 2))
+//        attributedString.addAttributes([.foregroundColor: UIColor.gray], range: NSRange(location: 0 , length: 7))
         
         timeLabel.attributedText = attributedString
     }
