@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		616DAFB92AB699AA00321F87 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616DAFB82AB699AA00321F87 /* RoundButton.swift */; };
 		618F99752AB478EF00A0AB10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F99742AB478EF00A0AB10 /* AppDelegate.swift */; };
 		618F99772AB478EF00A0AB10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F99762AB478EF00A0AB10 /* SceneDelegate.swift */; };
 		618F99792AB478EF00A0AB10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F99782AB478EF00A0AB10 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		616DAFB82AB699AA00321F87 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		618F99712AB478EF00A0AB10 /* stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618F99742AB478EF00A0AB10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		618F99762AB478EF00A0AB10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				618F99742AB478EF00A0AB10 /* AppDelegate.swift */,
 				618F99762AB478EF00A0AB10 /* SceneDelegate.swift */,
+				616DAFB82AB699AA00321F87 /* RoundButton.swift */,
 				618F99782AB478EF00A0AB10 /* ViewController.swift */,
 				618F997A2AB478EF00A0AB10 /* Main.storyboard */,
 				618F997D2AB478F000A0AB10 /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				616DAFB92AB699AA00321F87 /* RoundButton.swift in Sources */,
 				618F99792AB478EF00A0AB10 /* ViewController.swift in Sources */,
 				618F99752AB478EF00A0AB10 /* AppDelegate.swift in Sources */,
 				618F99772AB478EF00A0AB10 /* SceneDelegate.swift in Sources */,
